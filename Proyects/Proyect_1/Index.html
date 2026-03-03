@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Security Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+  <div class="header_name">
+    <h2 class="name">Matheo Nicastro</h2>
+  </div>
+
+  <nav class="header_bar">
+    <a href="..\/Index.html">Inicio</a>
+    <a href="IndexP.html">Proyectos</a>
+    <a href="Skills.html">Conocimientos</a>
+    <a href="">Contacto</a>
+  </nav>
+</header>
+
+  <div class="container">
+    <h1>🔐 Password Security Lab</h1>
+    <p class="subtitle">
+      Analizá la seguridad de tu contraseña y aprendé cómo protegerte contra ataques comunes.
+    </p>
+
+    <div class="card">
+      <label for="password">Ingresá tu contraseña</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Escribí tu contraseña..."
+        oninput="analyze()"
+      />
+
+      <div class="meter">
+        <div id="bar"></div>
+      </div>
+
+      <div class="stats">
+        <p><strong>Fuerza:</strong> <span id="strength">-</span></p>
+        <p><strong>Entropía:</strong> <span id="entropy">0</span> bits</p>
+        <p><strong>Tiempo estimado de crackeo:</strong> <span id="time">-</span></p>
+      </div>
+
+      <ul class="checklist">
+        <li id="length">❌ Mínimo 8 caracteres</li>
+        <li id="upper">❌ Mayúsculas</li>
+        <li id="lower">❌ Minúsculas</li>
+        <li id="number">❌ Números</li>
+        <li id="symbol">❌ Símbolos</li>
+      </ul>
+
+      <button onclick="generatePassword()">Generar contraseña segura</button>
+    </div>
+
+    <footer>
+      <p>Proyecto educativo de ciberseguridad • No se almacenan contraseñas</p>
+    </footer>
+  </div>
+
+  <script src="Script.js"></script>
+</body>
+</html>

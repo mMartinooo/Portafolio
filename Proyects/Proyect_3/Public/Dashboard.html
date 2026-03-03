@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>SOC Dashboard</title>
+  <link rel="stylesheet" href="styleP3.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>🛡️ Cyber Security Dashboard</h1>
+    <p class="subtitle">Monitoreo de eventos en tiempo real</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Últimos eventos</h3>
+        <ul id="logList"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Estado del sistema</h3>
+        <p id="status">🟢 Sistema estable</p>
+        <p>Alertas: <span id="alerts">0</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const logList = document.getElementById("logList");
+    const alerts = document.getElementById("alerts");
+
+    async function fetchLogs() {
+      await fetch("/api/log");
+      const res = await fetch("/api/logs");
+      const logs = await res.json();
+
+      logList.innerHTML = "";
+      let alertCount = 0;
+
+      logs.slice().reverse().forEach(log => {
+        const li = document.createElement("li");
+        li.textContent = `${log.time} | ${log.ip} | ${log.event}`;
+
+        if (log.event.includes("sospechoso") || log.event.includes("Intento")) {
+          li.style.color = "#f87171";
+          alertCount++;
+        }
+
+        logList.appendChild(li);
+      });
+
+      alerts.textContent = alertCount;
+    }
+
+    setInterval(fetchLogs, 3000);
+    fetchLogs();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mis Proyectos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+  <div class="header_name">
+    <h2 class="name">Matheo Nicastro</h2>
+  </div>
+
+  <nav class="header_bar">
+    <a href="..\Index.html">Inicio</a>
+    <a href="Index.html">Proyectos</a>
+    <a href="..\Skills/Index.html">Conocimientos</a>
+    <a href="..\Contact/Index.html">Contacto</a>
+  </nav>
+</header>
+
+   <div class="cabeza">
+    <h1>Mis Proyectos</h1>
+    <p>Desarrollo Web & Ciberseguridad</p>
+    </div>
+
+  <nav class="filters">
+    <button onclick="filterProjects('all')">Todos</button>
+    <button onclick="filterProjects('web')">Web</button>
+    <button onclick="filterProjects('cyber')">Ciberseguridad</button>
+    <button onclick="filterProjects('backend')">Backend</button>
+  </nav>
+
+  <main class="grid" id="projectGrid">
+    <!-- Card ejemplo -->
+    <div class="card" data-category="cyber">
+      <h3>🔐 Password Security Lab</h3>
+      <p>Analizador de contraseñas con entropía, tiempo de crackeo y generador seguro.</p>
+      <div class="tags">
+        <span>HTML</span><span>CSS</span><span>JS</span>
+      </div>
+      <div class="actions">
+        <a href="Proyect_1/Index.html" target="_blank">Demo</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="cyber">
+      <h3>🧠 Phishing Awareness Simulator</h3>
+      <p>Simulador educativo con backend y panel admin para concientización en phishing.</p>
+      <div class="tags">
+        <span>Node</span><span>Express</span><span>HTML</span>
+      </div>
+      <div class="actions">
+        <a href="Proyect_2/public/IndexP2.html" target="_blank">Demo</a>
+      </div>
+    </div>
+
+    <div class="card" data-category="backend">
+      <h3>🛡️ Cyber Security Dashboard</h3>
+      <p>Mini SOC Web con autenticación segura, logs en tiempo real y alertas.</p>
+      <div class="tags">
+        <span>Node</span><span>Security</span><span>Dashboard</span>
+      </div>
+      <div class="actions">
+        <a href="Proyect_3/Public/LoginP3.html" target="_blank">Demo</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 • Portfolio Ciberseguridad & Desarrollo Web</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

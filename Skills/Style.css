@@ -1,0 +1,233 @@
+/* ---------------- GENERAL ---------------- */
+* { 
+  box-sizing: border-box; 
+  font-family: "Inter", sans-serif; 
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #000000;
+  color: white;
+}
+
+/* ---------------- HEADER ---------------- */
+.header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(71, 237, 77, 0.15);
+  z-index: 100;
+}
+
+.name {
+  font-size: 1.8rem;
+  color: #47ed4d;
+  letter-spacing: 0.25rem;
+  font-weight: 600;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.header_bar a {
+  position: relative;
+  color: #9fffa3;
+  text-decoration: none;
+  padding: 14px 20px;
+  font-size: 1.2rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.header_bar a:hover {
+  transform: translateY(-2px) scale(1.2);
+  color: #47ed4d;
+  text-shadow: 0 0 8px rgba(71, 237, 77, 0.6);
+}
+
+.header_bar a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 0%;
+  height: 2px;
+  background: #47ed4d;
+  box-shadow: 0 0 10px #47ed4d;
+  transition: 0.3s ease;
+}
+
+.header_bar a:hover::after {
+  width: 70%;
+  left: 15%;
+}
+
+/* ---------------- SKILLS PAGE ---------------- */
+.skills_page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 60px 20px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.skills_bg video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(3px) brightness(0.7);
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at left, rgba(0,0,0,0.6), rgba(0,0,0,0.95));
+  z-index: -1;
+}
+
+/* ---------------- CONTENT ---------------- */
+.skills_content {
+  max-width: 800px;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills_title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  animation: fadeSlideIn 1s ease forwards, glowText 2s ease-in-out infinite alternate;
+}
+
+.skills_subtitle {
+  font-size: 1.4rem;
+  opacity: 0.85;
+  margin-bottom: 3rem;
+  animation: fadeSlideIn 1.2s ease forwards;
+}
+
+/* ---------------- GRID DE SKILLS ---------------- */
+.skills_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* ---------------- TARJETAS DE SKILL ---------------- */
+.skill_card {
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(71,237,77,0.4);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  animation: fadeSlideIn 1s forwards;
+}
+
+.skill_card:hover {
+  transform: translateY(-6px) scale(1.05) rotateZ(0.5deg);
+  box-shadow: 0 15px 35px rgba(71,237,77,0.45), 0 0 25px rgba(71,237,77,0.7);
+  border-color: #47ed4d;
+}
+
+/* Delay animado para cada tarjeta */
+.skill_card:nth-child(1) { animation-delay: 1.4s; }
+.skill_card:nth-child(2) { animation-delay: 1.6s; }
+.skill_card:nth-child(3) { animation-delay: 1.8s; }
+.skill_card:nth-child(4) { animation-delay: 2s; }
+.skill_card:nth-child(5) { animation-delay: 2.2s; }
+
+/* ---------------- BARRAS DE SKILL ---------------- */
+.skill_bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(71,237,77,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.skill_level {
+  height: 100%;
+  width: 0%; /* empieza en 0 */
+  border-radius: 12px;
+  background: linear-gradient(90deg, #47ed4d, #9fffa3);
+  animation: fillSkill 1.5s ease forwards;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+/* Efecto “brillo” sobre la barra */
+.skill_level::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 40px;
+  height: 100%;
+  transform: skewX(-20deg);
+  animation: shine 1.5s forwards;
+  animation-delay: inherit; /* hereda el delay de la barra */
+}
+
+/* Diferente nivel y delay para cada skill */
+.skill_level.html { --width: 100%; animation-delay: 1.5s; }
+.skill_level.cyber { --width: 100%; animation-delay: 1.7s; }
+.skill_level.python { --width: 100%; animation-delay: 1.9s; }
+.skill_level.video { --width: 100%; animation-delay: 2.1s; }
+.skill_level.threeD { --width: 100%; animation-delay: 2.3s; }
+
+/* ---------------- ANIMACIONES ---------------- */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowText {
+  0% { text-shadow: 0 0 6px #47ed4d; }
+  100% { text-shadow: 0 0 20px #9fffa3; }
+}
+
+@keyframes fillSkill {
+  from { width: 0%; }
+  to { width: var(--width); }
+}
+
+@keyframes shine {
+  0% { left: -40px; }
+  100% { left: 100%; }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media screen and (max-width: 768px) {
+  .skills_title { font-size: 2.5rem; }
+  .skills_subtitle { font-size: 1.2rem; text-align: center; }
+}

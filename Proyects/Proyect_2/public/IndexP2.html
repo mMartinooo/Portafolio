@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Login</title>
+  <link rel="stylesheet" href="styleP2.css" />
+</head>
+<body>
+
+  <div class="card">
+    <h2>🔐 Secure Login</h2>
+    <p class="subtitle">Acceso a plataforma protegida</p>
+
+    <form action="/login" method="POST">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="usuario@email.com" required />
+
+      <label>Contraseña</label>
+      <input type="password" placeholder="••••••••" disabled />
+
+      <button type="submit">Iniciar sesión</button>
+    </form>
+
+    <p class="warning">
+      ⚠️ Proyecto educativo de concientización sobre phishing.  
+      No se almacenan contraseñas reales.
+    </p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "$2a$10$z3zYQbR8m6pZ8ZJZzvU9EO6qZ5kM5j5z8H0d8uJ3GQeZ8Z8Z8Z8Z8"
+    }
+  ],
+  "logs": [
+    {
+      "ip": "::1",
+      "event": "Intento fallido",
+      "time": "30/1/2026, 09:44:12"
+    },
+    {
+      "ip": "::1",
+      "event": "Acceso sospechoso",
+      "time": "30/1/2026, 09:44:15"
+    },
+    {
+      "ip": "::1",
+      "event": "Escaneo de puertos",
+      "time": "30/1/2026, 09:44:18"
+    },
+    {
+      "ip": "::1",
+      "event": "Login exitoso",
+      "time": "30/1/2026, 09:44:21"
+    },
+    {
+      "ip": "::1",
+      "event": "Intento fallido",
+      "time": "30/1/2026, 09:44:24"
+    },
+    {
+      "ip": "::1",
+      "event": "Escaneo de puertos",
+      "time": "30/1/2026, 09:44:27"
+    },
+    {
+      "ip": "::1",
+      "event": "Intento fallido",
+      "time": "30/1/2026, 09:44:30"
+    },
+    {
+      "ip": "::1",
+      "event": "Login exitoso",
+      "time": "30/1/2026, 09:44:33"
+    },
+    {
+      "ip": "::1",
+      "event": "Intento fallido",
+      "time": "30/1/2026, 09:44:36"
+    },
+    {
+      "ip": "::1",
+      "event": "Escaneo de puertos",
+      "time": "30/1/2026, 09:44:39"
+    },
+    {
+      "ip": "::1",
+      "event": "Acceso sospechoso",
+      "time": "30/1/2026, 09:44:42"
+    },
+    {
+      "ip": "::1",
+      "event": "Login exitoso",
+      "time": "30/1/2026, 09:44:45"
+    }
+  ]
+}
